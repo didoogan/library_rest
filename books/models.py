@@ -7,7 +7,7 @@ from authors.models import Author
 
 class Book(models.Model):
     title = models.CharField(max_length=50)
-    author = models.ManyToManyField(Author)
+    author = models.ManyToManyField(Author, related_name='book')
     is_taken = models.BooleanField(default=False)
 
     def __unicode__(self):
