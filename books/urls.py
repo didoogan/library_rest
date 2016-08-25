@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
-from authors import views
+from books import views
 from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register(r'^', views.AuthorViewSet)
+router.register(r'^', views.BookViewSet)
 
 # API endpoints
 urlpatterns = [
