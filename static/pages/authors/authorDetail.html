@@ -3,3 +3,10 @@
 <p>Name : {{ author.first_name }}</p>
 <p>Last name : {{ author.last_name }}</p>
 
+
+<h3>Has wrote the next books: </h3>
+<ul ng-repeat="book in list">
+    <li>{{ book.title}}</li>
+
+</ul>
+

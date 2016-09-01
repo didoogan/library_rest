@@ -4,9 +4,18 @@ app.controller("AuthorList", [ '$scope', 'Author', function ($scope, Author) {
     });
 }]);
 
-app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', function ($scope, Author, $routeParams) {
+app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', function ($scope, Author, $routeParams, Book) {
     Author.getAuthor({id: $routeParams.id}, function(data) {
         $scope.author = data;
+        $scope.list = [];
+        console.log(data.book);
+        for (var index in data.book) {
+            Book.getBook({'id': data.book[index]}, function (book) {
+            $scope.list.push(book);
+
+            });
+        }
+
     });
 }]);
 
