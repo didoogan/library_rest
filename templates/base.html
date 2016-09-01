@@ -24,8 +24,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#booksapp">Books <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li class=""><a href="#booksapp">Books <span class="sr-only">(current)</span></a></li>
+        <li><a href="#authorsapp">Authors</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -76,5 +76,9 @@
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-resource.min.js"></script>
        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/services/authorService.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/services/bookService.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/controllers/authorControllers.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/controllers/bookControllers.js' %}"></script>
   </body>
 </html>
