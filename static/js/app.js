@@ -1,7 +1,10 @@
 var app = angular.module('myApp', ['ngRoute', 'ngResource']);
 
 // ROUTES
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $resourceProvider, $httpProvider) {
+    $resourceProvider.defaults.stripTrailingSlashes = false;
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $routeProvider
 
     .when('/booksapp', {
@@ -15,6 +18,10 @@ app.config(function($routeProvider) {
     .when('/authorsapp', {
         templateUrl: 'static/pages/authors/authors.html',
         controller: 'AuthorList'
+    })
+    .when('/authorsapp/create', {
+    templateUrl: 'static/pages/authors/authorCreate.html',
+    controller: 'AuthorCreateCtrl'
     })
     .when('/authorsapp/:id', {
         templateUrl: 'static/pages/authors/authorDetail.html',

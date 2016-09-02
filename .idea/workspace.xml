@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55cad22c-fba5-4967-b771-878d3c7fa1e8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authors/serializer.py" afterPath="$PROJECT_DIR$/authors/serializer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/app.js" afterPath="$PROJECT_DIR$/static/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/controllers/authorControllers.js" afterPath="$PROJECT_DIR$/static/js/controllers/authorControllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/pages/authors/authorDetail.html" afterPath="$PROJECT_DIR$/static/pages/authors/authorDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/services/authorService.js" afterPath="$PROJECT_DIR$/static/js/services/authorService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/pages/authors/authors.html" afterPath="$PROJECT_DIR$/static/pages/authors/authors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/pages/books/bookDetail.html" afterPath="$PROJECT_DIR$/static/pages/books/bookDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/pages/books/books.html" afterPath="$PROJECT_DIR$/static/pages/books/books.html" />
     </list>
     <ignored path="library_rest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +39,8 @@
       <file leaf-file-name="serializer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/authors/serializer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="78" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
+            <state relative-caret-position="162">
+              <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -47,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authorControllers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/controllers/authorControllers.js">
+      <file leaf-file-name="os.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env/lib/python2.7/os.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="346">
+              <caret line="560" column="54" selection-start-line="560" selection-start-column="54" selection-end-line="560" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -60,31 +61,59 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="9" column="62" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/services/bookService.js">
+      <file leaf-file-name="mixins.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/rest_framework/mixins.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="20" />
+            <state relative-caret-position="270">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/books/serializer.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/rest_framework/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="619">
+              <caret line="473" column="0" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authorControllers.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/controllers/authorControllers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autoreload.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/django/utils/autoreload.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="273" column="0" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketServer.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/SocketServer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,41 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authors.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/pages/authors/authors.html">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authorDetail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/pages/authors/authorDetail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bookDetail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/pages/books/bookDetail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="books.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/pages/books/books.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+            <state relative-caret-position="306">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -153,7 +152,6 @@
         <option value="$PROJECT_DIR$/books/urls.py" />
         <option value="$PROJECT_DIR$/authors/urls.py" />
         <option value="$PROJECT_DIR$/books/models.py" />
-        <option value="$PROJECT_DIR$/main_app/settings.py" />
         <option value="$PROJECT_DIR$/main_app/urls.py" />
         <option value="$PROJECT_DIR$/static/js/pages/books.html" />
         <option value="$PROJECT_DIR$/static/pages/book_detail.html" />
@@ -161,20 +159,22 @@
         <option value="$PROJECT_DIR$/static/pages/book_create.html" />
         <option value="$PROJECT_DIR$/static/js/controllers/bookControllers.js" />
         <option value="$PROJECT_DIR$/static/js/services/bookService.js" />
-        <option value="$PROJECT_DIR$/static/js/services/authorService.js" />
-        <option value="$PROJECT_DIR$/static/js/app.js" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/authors/__init__.py" />
         <option value="$PROJECT_DIR$/comon/serializer.py" />
         <option value="$PROJECT_DIR$/authors/views.py" />
         <option value="$PROJECT_DIR$/books/views.py" />
-        <option value="$PROJECT_DIR$/static/js/controllers/authorControllers.js" />
         <option value="$PROJECT_DIR$/books/serializer.py" />
-        <option value="$PROJECT_DIR$/authors/serializer.py" />
         <option value="$PROJECT_DIR$/static/pages/books/bookDetail.html" />
-        <option value="$PROJECT_DIR$/static/pages/authors/authors.html" />
         <option value="$PROJECT_DIR$/static/pages/authors/authorDetail.html" />
         <option value="$PROJECT_DIR$/static/pages/books/books.html" />
+        <option value="$PROJECT_DIR$/static/pages/authors/authors.html" />
+        <option value="$PROJECT_DIR$/static/js/services/authorService.js" />
+        <option value="$PROJECT_DIR$/static/pages/authors/authorCreate.html" />
+        <option value="$PROJECT_DIR$/main_app/settings.py" />
+        <option value="$PROJECT_DIR$/static/js/app.js" />
+        <option value="$PROJECT_DIR$/authors/serializer.py" />
+        <option value="$PROJECT_DIR$/static/js/controllers/authorControllers.js" />
       </list>
     </option>
   </component>
@@ -247,48 +247,50 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
+              <option name="myItemId" value="library_rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library_rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library_rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library_rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library_rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library_rest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="books" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library_rest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library_rest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="authors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library_rest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library_rest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -313,9 +315,11 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -645,63 +649,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/authors/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authors/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authors/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/rest_framework/routers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2196">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_app/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/books/serializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -840,13 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env/lib/python2.7/os.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="547" column="0" selection-start-line="547" selection-start-column="0" selection-end-line="547" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/importlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -858,14 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_app/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -940,14 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/services/authorService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/comon/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -992,14 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/controllers/bookControllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1016,40 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/controllers/authorControllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authors/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authors/serializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="78" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/books/serializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1057,14 +944,6 @@
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/pages/authors/authors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,6 +967,128 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/pages/authors/authors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/pages/authors/authorCreate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/services/authorService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authors/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/rest_framework/mixins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/rest_framework/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="473" column="0" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/django/utils/autoreload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="273" column="0" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authors/serializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/SocketServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env/lib/python2.7/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="560" column="54" selection-start-line="560" selection-start-column="54" selection-end-line="560" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env/local/lib/python2.7/site-packages/rest_framework/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/controllers/authorControllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
           <folding />
         </state>
       </provider>

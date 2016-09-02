@@ -1,8 +1,10 @@
-<h2 align="center">Author list :</h2>
+<h2 align="center"><b>Author list :</b></h2>
 
 
 <table class="table">
     <tr ng-repeat="author in authors">
-        <td><a href="#authorsapp/{{ author.pk }}"><h4>{{ author.full_name }}</h4></a></td>
+        <td><a ng-href="#authorsapp/{{ author.pk }}"><h4>{{ author.full_name }}</h4></a></td>
     </tr>
 </table>
+
+<a href="#authorsapp/create" class="btn btn-success">Create new author</a>

@@ -7,9 +7,10 @@ from .models import Author
 # class AuthorSerializer(serializers.HyperlinkedModelSerializer):
 #     book = serializers.HyperlinkedRelatedField(many=True, view_name='book-detail', read_only=True)
 class AuthorSerializer(serializers.ModelSerializer):
-    # book = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    book = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     # book = BookSerializer(many=True, read_only=True)
     full_name = serializers.SerializerMethodField()
+    # book = serializers.ListField(child=serializers.IntegerField(), read_only=True)
 
     class Meta:
         model = Author

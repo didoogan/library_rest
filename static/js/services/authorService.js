@@ -13,7 +13,7 @@ app.factory('Author', ['$http', '$resource', function($http, $resource) {
                 method: 'GET', isArray: false
             },
 
-            save: {
+            'save': {
                 method: "POST"
             }
         })

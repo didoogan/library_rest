@@ -19,8 +19,16 @@ app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', func
     });
 }]);
 
-app.controller("AuthorCreate", [ '$scope', 'Author','$routeParams', function ($scope, Author, $routeParams) {
-    Author.getAuthor(function(data) {
-        $scope.book = data;
-    });
+app.controller("AuthorCreateCtrl", [ '$scope', 'Author','$routeParams','$window', function ($scope, Author, $routeParams, $window) {
+    $scope.saveAuthor = function() {
+        var newAuthor = new Author();
+        newAuthor.first_name = $scope.firstName;
+        newAuthor.last_name = $scope.lastName;
+        newAuthor.$save()
+        .then(function(res)  {  $window.location.href = '#authorsapp'; })
+        .catch(function(req) { console.log('FUCK error' ) })
+    };
+
 }]);
+
+
