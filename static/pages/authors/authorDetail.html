@@ -1,12 +1,8 @@
-<h2>Author detail</h2>
-
-<p>Name : {{ author.first_name }}</p>
-<p>Last name : {{ author.last_name }}</p>
+<h2 align="center"><b>{{ author.full_name }}</b> has wrote next books :</h2>
 
 
-<h3>Has wrote the next books: </h3>
-<ul ng-repeat="book in list">
-    <li>{{ book.title}}</li>
-
-</ul>
-
+<table class="table">
+    <tr ng-repeat="book in list">
+        <td><a href="#booksapp/{{ book.pk }}"><h4> {{ book.title }}</h4></a></td>
+    </tr>
+</table>

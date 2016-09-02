@@ -1,8 +1,8 @@
-<h2>{{ book.title }} has wrote by: </h2>
+<h2 align="center"><b>"{{ book.title }}"</b> has wrote by: </h2>
 
-
-<ul ng-repeat="author in book.author">
-    <li><a ng-href="#authorsapp/{{ author.pk }}">{{ author.first_name }} {{ author.last_name }}</a></li>
-</ul>
-
+<table class="table">
+<tr ng-repeat="author in book.author">
+    <td><a ng-href="#authorsapp/{{ author.pk }}"><h4>{{ author.full_name }}</h4></a></td>
+</tr>
+</table>
 {{ list }}

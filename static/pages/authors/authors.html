@@ -1,8 +1,8 @@
-<h2>Author list</h2>
+<h2 align="center">Author list :</h2>
 
 
-<div >
-    <ul ng-repeat="author in authors">
-        <li>{{ author.first_name }} {{ author.last_name }} <a href="#authorsapp/{{ author.pk }}">Detail view</a></li>
-    </ul>
-</div>
+<table class="table">
+    <tr ng-repeat="author in authors">
+        <td><a href="#authorsapp/{{ author.pk }}"><h4>{{ author.full_name }}</h4></a></td>
+    </tr>
+</table>

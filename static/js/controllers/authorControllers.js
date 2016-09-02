@@ -9,8 +9,8 @@ app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', func
         $scope.author = data;
         $scope.list = [];
         console.log(data.book);
-        for (var index in data.book) {
-            Book.getBook({'id': data.book[index]}, function (book) {
+        for (var index of data.book) {
+            Book.getBook({'id': index}, function (book) {
             $scope.list.push(book);
 
             });
