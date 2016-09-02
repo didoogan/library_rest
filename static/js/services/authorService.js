@@ -15,6 +15,9 @@ app.factory('Author', ['$http', '$resource', function($http, $resource) {
 
             'save': {
                 method: "POST"
+            },
+            'delete': {
+                method: "DELETE"
             }
         })
     }]);

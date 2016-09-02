@@ -1,7 +1,14 @@
-app.controller("AuthorList", [ '$scope', 'Author', function ($scope, Author) {
+app.controller("AuthorList", [ '$scope', 'Author', '$http', '$window', function ($scope, Author, $http, $window) {
     Author.query(function (data) {
         $scope.authors = data;
+        console.log(data);
+
+
     });
+    $scope.deleteAuthor = function(id) {
+            $http.delete('/authors/'+id);
+             $window.location.reload();
+        }
 }]);
 
 app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', function ($scope, Author, $routeParams, Book) {
@@ -9,8 +16,8 @@ app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', func
         $scope.author = data;
         $scope.list = [];
         console.log(data.book);
-        for (var index of data.book) {
-            Book.getBook({'id': index}, function (book) {
+        for (var value of data.book) {
+            Book.getBook({'id': value}, function (book) {
             $scope.list.push(book);
 
             });
@@ -26,9 +33,10 @@ app.controller("AuthorCreateCtrl", [ '$scope', 'Author','$routeParams','$window'
         newAuthor.last_name = $scope.lastName;
         newAuthor.$save()
         .then(function(res)  {  $window.location.href = '#authorsapp'; })
-        .catch(function(req) { console.log('FUCK error' ) })
+        .catch(function(req) { $window.location.href = '#authorsapp/create';  })
     };
 
 }]);
+
 
 
