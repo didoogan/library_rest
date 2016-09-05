@@ -1,7 +1,11 @@
-app.controller("BookList", [ '$scope', 'Book', function ($scope, Book) {
+app.controller("BookList", [ '$scope', 'Book', '$http', '$window', function ($scope, Book, $http, $window) {
     Book.query(function (data) {
         $scope.books = data;
         console.log(data);
+        $scope.bookDelete = function(id) {
+            $http.delete('/books/'+id);
+            $window.location.reload();
+        }
     });
 }]);
 
