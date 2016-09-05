@@ -11,8 +11,20 @@ app.controller("BookDetail", [ '$scope', 'Book','$routeParams', function ($scope
     });
 }]);
 
-app.controller("BookCreate", [ '$scope', 'Book','$routeParams', function ($scope, Book, $routeParams) {
-    Book.getBook(function(data) {
-        $scope.book = data;
-    });
+app.controller("BookCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$window', function ($scope, Author, Book, $routeParams, $window) {
+        $scope.allAuthors = Author.query();
+        $scope.newBook = new Book();
+        $scope.bookSave = function() {
+            console.log($scope.newBook);
+            $scope.newBook.$save()
+            .then(function(res)  {  $window.location.href = '#booksapp'; })
+            .catch(function(req) { $window.location.href = '#booksapp/create';  })
+            // console.log($scope.bookAuthors);
+        };
+        $scope.bookDelete = function(id) {
+            $http.delete('/book/'+id);
+            $window.location.reload();
+        }
+
+
 }]);

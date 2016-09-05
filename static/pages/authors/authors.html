@@ -4,7 +4,8 @@
 <table class="table">
     <tr ng-repeat="author in authors">
         <td><a ng-href="#authorsapp/{{ author.pk }}"><h4>{{ author.full_name }}</h4></a></td>
-        <td><a href="" ng-click="deleteAuthor(author.pk)">Delete author</a></td>
+        <td align="right"><a href="#authorsapp/{{ author.pk }}/update"><span class="glyphicon glyphicon-edit"></span> </a></td>
+        <td align="right"><a href="" ng-click="deleteAuthor(author.pk)"><span class="glyphicon glyphicon-trash"></span> </a></td>
     </tr>
 </table>
 

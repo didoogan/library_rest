@@ -5,5 +5,11 @@
 <table class="table">
     <tr ng-repeat="book in books">
         <td><h4><a href="#booksapp/{{ book.pk }}">{{ book.title }}</a></h4></td>
+        <td align="right"><a href="#booksapp/{{ book.pk }}/update"><span class="glyphicon glyphicon-edit"></span> </a></td>
+        <td align="right"><a href="" ng-click="bookDelete(book.pk)"><span class="glyphicon glyphicon-trash"></span> </a></td>
     </tr>
 </table>
+
+<a href="#booksapp/create" class="btn btn-success">Create new book</a>
+
+<!-- <br />{{ books }} -->

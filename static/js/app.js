@@ -11,10 +11,17 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         templateUrl: 'static/pages/books/books.html',
         controller: 'BookList'
     })
+    .when('/booksapp/create', {
+        templateUrl: 'static/pages/books/bookCreate.html',
+        controller: 'BookCreateCtrl'
+    })
+
     .when('/booksapp/:id', {
         templateUrl: 'static/pages/books/bookDetail.html',
         controller: 'BookDetail'
     })
+
+
     .when('/authorsapp', {
         templateUrl: 'static/pages/authors/authors.html',
         controller: 'AuthorList'
@@ -26,6 +33,10 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
     .when('/authorsapp/:id', {
         templateUrl: 'static/pages/authors/authorDetail.html',
         controller: 'AuthorDetail'
+    })
+    .when('/authorsapp/:id/update', {
+    templateUrl: 'static/pages/authors/authorUpdate.html',
+    controller: 'AuthorUpdateCtrl'
     })
 });
 

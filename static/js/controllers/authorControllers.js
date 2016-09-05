@@ -38,5 +38,20 @@ app.controller("AuthorCreateCtrl", [ '$scope', 'Author','$routeParams','$window'
 
 }]);
 
+app.controller("AuthorUpdateCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', function ($scope, Author, $routeParams, $location, $window) {
+    $scope.author = Author.getAuthor({ id:$routeParams.id });
+
+    $scope.authorUpdate = function() {
+        Author.update({ id:$scope.author.pk }, $scope.author);
+        // $scope.author.$update()
+        // .then(function(res)  {  $window.location.href = '#authorsapp'; })
+        // .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+        $location.path('authorsapp');
+        $window.location.reload();
+        };
+    }]);
+
+
+
 
 
