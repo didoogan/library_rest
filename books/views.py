@@ -13,3 +13,7 @@ class BookViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         authors = self.request.data.get('author', None)
         serializer.save(authors=authors)
+
+    def perform_update(self, serializer):
+        authors = self.request.data.get('author', None)
+        serializer.save(authors=authors)

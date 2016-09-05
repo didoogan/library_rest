@@ -32,3 +32,19 @@ app.controller("BookCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$
 
 
 }]);
+
+app.controller("BookUpdateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$location', '$window', function ($scope, Author, Book, $routeParams, $location, $window) {
+    $scope.myBook = Book.getBook({ id:$routeParams.id });
+    $scope.allAuthors = Author.query();
+
+    $scope.bookUpdate = function() {
+        Book.update({ id:$scope.myBook.pk }, $scope.myBook);
+        console.log($scope.myBook);
+        // $scope.myBook.$update();
+        // $scope.author.$update()
+        // .then(function(res)  {  $window.location.href = '#authorsapp'; })
+        // .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+        $location.path('booksapp');
+        $window.location.reload();
+        };
+    }]);

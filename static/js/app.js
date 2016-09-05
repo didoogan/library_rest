@@ -20,6 +20,10 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         templateUrl: 'static/pages/books/bookDetail.html',
         controller: 'BookDetail'
     })
+    .when('/booksapp/:id/update', {
+    templateUrl: 'static/pages/books/bookUpdate.html',
+    controller: 'BookUpdateCtrl'
+    })
 
 
     .when('/authorsapp', {

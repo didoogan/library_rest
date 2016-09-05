@@ -24,3 +24,10 @@ class BookSerializer(serializers.ModelSerializer):
         book.save()
         book.author.add(*authors)
         return book
+
+    def update(self, instance, validated_data):
+        instance.title = validated_data.get('title', instance.title)
+        instance.save()
+        authors = Author.objects.filter(pk__in=validated_data['authors'])
+        instance.author = authors
+        return instance
