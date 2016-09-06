@@ -38,10 +38,16 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         templateUrl: 'static/pages/authors/authorDetail.html',
         controller: 'AuthorDetail'
     })
+    .when('/users/:id/update', {
+    templateUrl: 'static/pages/authors/authorUpdate.html',
+    controller: 'AuthorUpdateCtrl'
+    })
+
     .when('/authorsapp/:id/update', {
     templateUrl: 'static/pages/authors/authorUpdate.html',
     controller: 'AuthorUpdateCtrl'
     })
+
 });
 
 // SERVICES
