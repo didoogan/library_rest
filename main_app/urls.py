@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'', include(router.urls)),
     url(r'^$', TemplateView.as_view(template_name="base.html")),
-    url(r'^users', include('users.urls')),
+    url(r'^users/', include('users.urls')),
 ]
 
 urlpatterns += [
