@@ -47,6 +47,10 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
     templateUrl: 'static/pages/authors/authorUpdate.html',
     controller: 'AuthorUpdateCtrl'
     })
+    .when('/usersapp/signup', {
+        templateUrl: 'static/pages/users/signup.html',
+        controller: 'SignupCtrl'
+        })
 
 });
 
