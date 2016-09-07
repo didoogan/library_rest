@@ -27,7 +27,7 @@ app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$
             url: '/users/signup/',
             data: {
                 username: $scope.login,
-                password: $scope.password,
+                password: $scope.password
                 // is_librarian: false
             }
         })
@@ -37,34 +37,34 @@ app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$
         , function errorCallback(response) {
             console.log('error');
         });
-        };
-    }]);
+    };
+}]);
 
 app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http',
                        function ($scope, Author, $routeParams, $location, $window, $http) {
-
+    $scope.var = 'Var';
     $scope.signIn = function() {
-        console.log('Sign in, smile :)');
-        console.log($scope.login);
-        console.log($scope.password);
-        // var data = {
-        //     username: $scope.login,
-        //     password: $scope.password
-        // };
+        $http({
+            method: 'POST',
+            url: '/users/signin/',
+            data: {
+                username: $scope.login,
+                password: $scope.password
+            }
+        })
+        .then(function successCallback(response) {
+            console.log('Ok');
+            console.log(response);
+            console.log(response.data);
+            console.log(response.data.error);
+            // if (response.data.error !== undefined) {
+                $scope.error = response.data.error;
+            // }
+        }
+        , function errorCallback(response) {
+            console.log('error');
 
-        // $http.post('/users/signup/', $.param({
-        //     username: $scope.login,
-        //     password: $scope.password
-        // }),{
-        //         headers : {
-        //             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-        //         }
-        //     })
-        //     .success(function () {
-        //         console.log('Ok');
-        //     })
-        //     .error(function () {
-        //         console.log('error');
-        //     });
-        };
-    }]);
+        });
+        $scope.error = 'Fuck';
+    };
+}]);

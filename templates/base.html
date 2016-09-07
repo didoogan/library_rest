@@ -51,6 +51,8 @@
             <a class="dropdown-toggle" href="" data-toggle="dropdown" id="navLogin">Sign in</a>
             <div class="dropdown-menu" style="padding:17px;">
               <form id="signin" ng-controller="SigninCtrl">
+                  <p>{{ error }}</p>
+                  <p>{{ var }}</p>
                   <div class="form-group">
                     <label for="login">Login:</label>
                     <input type="text" ng-model="login" class="form-control" id="login" name="login">

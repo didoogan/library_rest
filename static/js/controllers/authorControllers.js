@@ -1,7 +1,6 @@
 app.controller("AuthorList", [ '$scope', 'Author', '$http', '$window', function ($scope, Author, $http, $window) {
     Author.query(function (data) {
         $scope.authors = data;
-        console.log(data);
 
 
     });
