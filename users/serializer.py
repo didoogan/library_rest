@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
-    is_librarian = serializers.BooleanField(source='myuser.is_librarian', )
+    is_librarian = serializers.BooleanField(source='myuser.is_librarian', required=False)
     image = serializers.ImageField(source='myuser.image', required=False)
 
     class Meta:
