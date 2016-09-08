@@ -50,9 +50,10 @@
          <li class="dropdown" id="menuLogin">
             <a class="dropdown-toggle" href="" data-toggle="dropdown" id="navLogin">Sign in</a>
             <div class="dropdown-menu" style="padding:17px;">
+
+              {% verbatim %}
               <form id="signin" ng-controller="SigninCtrl">
                   <p>{{ error }}</p>
-                  <p>{{ var }}</p>
                   <div class="form-group">
                     <label for="login">Login:</label>
                     <input type="text" ng-model="login" class="form-control" id="login" name="login">
@@ -63,6 +64,8 @@
                   </div>
                   <button type="submit" ng-click="signIn()" class="btn btn-success">Sign in</button>
               </form>
+              {% endverbatim %}
+
             </div>
          </li>
       </ul>
