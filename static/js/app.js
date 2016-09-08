@@ -5,7 +5,6 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-    console.log(localStorage.getItem("ls.token"));
     // $httpProvider.defaults.common['Authorization'] = "Token " + localStorage.getItem("ls.token");
     // $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token");
 
@@ -57,6 +56,14 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         })
 
 });
+
+app.run(['$http', function($http) {
+    $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
+    console.log("TOKEN: ");
+    console.log(localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1));
+    $http.defaults.headers.common['Authorization'] = "Token " + '4093f675241b0463041a70493781319e55087717';
+    // $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
+}]);
 
 // app.config(function($http, Token) {
 //     $httpProvider.defaults.common['Authorization'] = Token;

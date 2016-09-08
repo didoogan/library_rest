@@ -53,20 +53,17 @@ app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$
             }
         })
         .then(function successCallback(response) {
-            console.log('Ok');
-            console.log(response);
-            console.log(response.data);
-            console.log(response.data.error);
+            console.log("success");
             $scope.error = response.data.error;
             $scope.token = response.data.token;
+            $scope.user = response.data.user;
             localStorageService.set('token', $scope.token);
-            console.log($scope.token);
+            localStorageService.set('user', $scope.token);
 
         }
         , function errorCallback(response) {
             console.log('error');
 
         });
-        $scope.error = 'Fuck';
     };
 }]);
