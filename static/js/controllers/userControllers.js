@@ -40,9 +40,15 @@ app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$
     };
 }]);
 
-app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
+app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
                        function ($scope, Author, $routeParams, $location, $window, $http, localStorageService) {
-    $scope.var = 'Var';
+    $scope.username = localStorageService.get('user');
+
+    $scope.logOut = function() {
+        localStorageService.clearAll();
+        $window.location.reload();
+        $scope.username = false;
+    };
     $scope.signIn = function() {
         $http({
             method: 'POST',
@@ -55,7 +61,9 @@ app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$
         .then(function successCallback(response) {
             console.log("success");
             localStorageService.set('token', response.data.token);
-            localStorageService.set('user', response.data.user);
+            $scope.username = response.data.user;
+            console.log(response.data.user);
+            localStorageService.set('user', $scope.username);
             $window.location.reload();
         }
         , function errorCallback(response) {
@@ -65,11 +73,3 @@ app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$
     };
 }]);
 
-app.controller("LogoutCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
-                       function ($scope, Author, $routeParams, $location, $window, $http, localStorageService) {
-    $scope.logOut = function() {
-        localStorageService.set('token', false);
-        localStorageService.set('user', false);
-        $window.location.reload();
-    }
-}]);

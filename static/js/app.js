@@ -57,12 +57,11 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
 
 app.run(['$http', function($http) {
     // $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
-    console.log("TOKEN: ");
-    if(localStorage.getItem("ls.token" ) != 'false') {
+    console.log(localStorage.getItem("is.tolen"));
+    if(localStorage.getItem("ls.token" )) {
         $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
     } else {
        // $http.defaults.headers.common['Authorization'] = undefined;
     }
-    console.log(localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1));
 }]);
 
