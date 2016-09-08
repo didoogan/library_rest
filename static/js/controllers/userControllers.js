@@ -54,16 +54,22 @@ app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$
         })
         .then(function successCallback(response) {
             console.log("success");
-            $scope.error = response.data.error;
-            $scope.token = response.data.token;
-            $scope.user = response.data.user;
-            localStorageService.set('token', $scope.token);
-            localStorageService.set('user', $scope.token);
-
+            localStorageService.set('token', response.data.token);
+            localStorageService.set('user', response.data.user);
+            $window.location.reload();
         }
         , function errorCallback(response) {
             console.log('error');
 
         });
     };
+}]);
+
+app.controller("LogoutCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
+                       function ($scope, Author, $routeParams, $location, $window, $http, localStorageService) {
+    $scope.logOut = function() {
+        localStorageService.set('token', false);
+        localStorageService.set('user', false);
+        $window.location.reload();
+    }
 }]);
