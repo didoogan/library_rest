@@ -1,10 +1,14 @@
-var app = angular.module('myApp', ['ngRoute', 'ngResource', ]);
+var app = angular.module('myApp', ['ngRoute', 'ngResource', 'LocalStorageModule']);
 
 // ROUTES
 app.config(function($routeProvider, $resourceProvider, $httpProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    console.log(localStorage.getItem("ls.token"));
+    // $httpProvider.defaults.common['Authorization'] = "Token " + localStorage.getItem("ls.token");
+    // $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token");
+
     $routeProvider
 
     .when('/booksapp', {
@@ -53,6 +57,17 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         })
 
 });
+
+// app.config(function($http, Token) {
+//     $httpProvider.defaults.common['Authorization'] = Token;
+// });
+
+// app.config(function($http, localStorageService) {
+//     $httpProvider.defaults.common['Authorization'] = localStorageService.get("token");
+// });
+// app.config(function(localStorageService) {
+//     console.log(localStorageService.get("token"));
+// });
 
 // SERVICES
 

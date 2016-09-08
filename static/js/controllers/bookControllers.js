@@ -1,4 +1,4 @@
-app.controller("BookList", [ '$scope', 'Book', '$http', '$window', function ($scope, Book, $http, $window) {
+app.controller("BookList", [ '$scope', 'Book', '$http', '$window', 'localStorageService', 'Token', function ($scope, Book, $http, $window, localStorageService, Token) {
     Book.query(function (data) {
         $scope.books = data;
         $scope.bookDelete = function(id) {
@@ -6,6 +6,7 @@ app.controller("BookList", [ '$scope', 'Book', '$http', '$window', function ($sc
             $window.location.reload();
         }
     });
+    // $scope.token = localStorageService.get('token');
 }]);
 
 app.controller("BookDetail", [ '$scope', 'Book','$routeParams', function ($scope, Book, $routeParams) {

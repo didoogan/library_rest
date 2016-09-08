@@ -40,8 +40,8 @@ app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$
     };
 }]);
 
-app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http',
-                       function ($scope, Author, $routeParams, $location, $window, $http) {
+app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
+                       function ($scope, Author, $routeParams, $location, $window, $http, localStorageService) {
     $scope.var = 'Var';
     $scope.signIn = function() {
         $http({
@@ -57,9 +57,11 @@ app.controller("SigninCtrl", [ '$scope', 'Author','$routeParams','$location', '$
             console.log(response);
             console.log(response.data);
             console.log(response.data.error);
-            // if (response.data.error !== undefined) {
-                $scope.error = response.data.error;
-            // }
+            $scope.error = response.data.error;
+            $scope.token = response.data.token;
+            localStorageService.set('token', $scope.token);
+            console.log($scope.token);
+
         }
         , function errorCallback(response) {
             console.log('error');
