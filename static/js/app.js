@@ -56,6 +56,14 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         templateUrl: 'static/pages/cards/cards.html',
         controller: 'CardListCtrl'
         })
+    .when('/cardsapp/isnottakenbooks', {
+    templateUrl: 'static/pages/cards/cardCreate.html',
+    controller: 'IsNotTakenBooksCtrl'
+    })
+    // .when('/cardsapp/create', {
+    //     templateUrl: 'static/pages/cards/cards.html',
+    //     controller: 'CardCreateCtrl'
+    //     })
 
 });
 

@@ -8,7 +8,7 @@ from books.serializer import BookSerializer
 class CardSerializer(serializers.ModelSerializer):
     # myuser = UserSerializer(read_only=True)
     books = BookSerializer(read_only=True)
-    when_giving = serializers.DateField()
+    when_giving = serializers.DateField(required=False)
     when_return = serializers.DateField(required=False)
 
     class Meta:

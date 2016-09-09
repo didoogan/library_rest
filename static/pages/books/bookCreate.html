@@ -4,12 +4,10 @@
   <label for="title">Title :</label>
   <input type="text" class="form-control" id="title" ng-model="newBook.title">
 
-  <form name="myForm" class="form-group">
       <label for="authors"> Authors : </label>
       <select ng-model="newBook.author" multiple class="form-control">
           <option ng-repeat="option in allAuthors" ng-value="option.pk">{{ option.full_name }}</option>
       </select>
-  </form>
 
 
 
