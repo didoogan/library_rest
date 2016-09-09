@@ -8,7 +8,6 @@ app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$
             data: {
                 username: $scope.login,
                 password: $scope.password
-                // is_librarian: false
             }
         })
         .then(function successCallback(response) {

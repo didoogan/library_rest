@@ -9,7 +9,6 @@ from authors.views import AuthorViewSet
 from books.views import BookViewSet
 
 
-
 router = SimpleRouter()
 router.register(r'authors', AuthorViewSet)
 router.register(r'books', BookViewSet)
@@ -21,6 +20,7 @@ urlpatterns = [
     url(r'', include(router.urls)),
     url(r'^$', TemplateView.as_view(template_name="base.html")),
     url(r'^users/', include('users.urls')),
+    url(r'^cards/', include('cards.urls')),
 ]
 
 urlpatterns += [

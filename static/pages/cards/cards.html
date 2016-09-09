@@ -1,0 +1,17 @@
+<h2 align="center">Card list</h2>
+
+<table class="table">
+    <tr>
+        <th>BOOK</th>
+        <th>TAKEN</th>
+        <th>RETURN</th>
+    </tr>
+    <tr ng-repeat="card in cards">
+        <td><h4><a href="#booksapp/{{ card.books.pk }}">{{ card.books.title }}</a></h4></td>
+        <td>{{ card.when_giving }}</td>
+        <td>{{ card.when_return }}</td>
+    </tr>
+</table>
+
+<a href="#cardsapp/create" class="btn btn-success">Read new books</a>
+<a href="#cardsapp/delete" class="btn btn-success">Return books</a>

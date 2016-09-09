@@ -52,6 +52,10 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         templateUrl: 'static/pages/users/signup.html',
         controller: 'SignupCtrl'
         })
+    .when('/cardsapp/', {
+        templateUrl: 'static/pages/cards/cards.html',
+        controller: 'CardListCtrl'
+        })
 
 });
 
