@@ -58,10 +58,8 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
 app.run(['$http', function($http) {
     // $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
     console.log(localStorage.getItem("is.tolen"));
-    if(localStorage.getItem("ls.token" )) {
+    if(localStorage.getItem("ls.token" ) && localStorage.getItem("ls.token" ) != 'null') {
         $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
-    } else {
-       // $http.defaults.headers.common['Authorization'] = undefined;
     }
 }]);
 

@@ -1,27 +1,7 @@
-app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', function ($scope, Author, $routeParams, $location, $window, $http) {
+app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
+    function ($scope, Author, $routeParams, $location, $window, $http, localStorageService) {
 
     $scope.signUp = function() {
-        console.log('Sign up, smile :)');
-        // var data = {
-        //     username: $scope.login,
-        //     password: $scope.password
-        // };
-
-        // $http.post('/users/signup/', $.param({
-        //     username: $scope.login,
-        //     password: $scope.password
-        // }),{
-        //         headers : {
-        //             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-        //         }
-        //     })
-        //     .success(function () {
-        //         console.log('Ok');
-        //     })
-        //     .error(function () {
-        //         console.log('error');
-        //     });
-
         $http({
             method: 'POST',
             url: '/users/signup/',
@@ -32,10 +12,20 @@ app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$
             }
         })
         .then(function successCallback(response) {
-            console.log('Ok');
+            if(response.data.error) {
+                $scope.error = response.data.error;
+                return;
+            }
+            localStorageService.set('token', response.data.token);
+            $scope.username = response.data.user;
+            console.log(response.data.user);
+            localStorageService.set('user', $scope.username);
+            $window.location.href = '#authorsapp';
+            $window.location.reload();
         }
         , function errorCallback(response) {
             console.log('error');
+
         });
     };
 }]);
@@ -49,6 +39,7 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
         $window.location.reload();
         $scope.username = false;
     };
+
     $scope.signIn = function() {
         $http({
             method: 'POST',
@@ -59,7 +50,10 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
             }
         })
         .then(function successCallback(response) {
-            console.log("success");
+            if(response.data.error) {
+                $scope.error = response.data.error;
+                return;
+            }
             localStorageService.set('token', response.data.token);
             $scope.username = response.data.user;
             console.log(response.data.user);

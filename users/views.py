@@ -25,12 +25,16 @@ def signup(request):
             password=serializer.validated_data['password']
         )
         MyUser.objects.create(user=user)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        content = {
+            'user': unicode(user.username),
+            'token': unicode(user.auth_token),
+        }
+        return Response(content, status=status.HTTP_201_CREATED)
     else:
         content = {
             'error': 'Such user already exists'
         }
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(content)
 
 
 @api_view(['POST'])
