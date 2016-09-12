@@ -60,7 +60,7 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
     templateUrl: 'static/pages/cards/cardCreate.html',
     controller: 'IsNotTakenBooksCtrl'
     })
-    .when('/cardsapp/', {
+    .when('/cardsapp/update', {
     templateUrl: 'static/pages/cards/cardUpdate.html',
     controller: 'CardUpdateCtrl'
     })

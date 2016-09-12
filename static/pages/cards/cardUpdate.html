@@ -3,11 +3,11 @@
 <div class="form-group">
     <label for="books">Lybrary's book</label>
     <select ng-model="books" multiple class="form-control">
-        <option ng-repeat="book in isNotTakenbooks" ng-value="book.pk">{{ book.title }}</option>
+        <option ng-repeat="card in userCards" ng-value="card.books.pk">{{ card.books.title }}</option>
     </select>
 </div>
 
-<a href="" ng-click="updateCard()" class="btn btn-success">Return books</a>
+<a href="" ng-click="cardUpdate()" class="btn btn-success">Return books</a>
 
 
 

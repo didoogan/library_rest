@@ -56,12 +56,29 @@ app.controller("CardUpdateCtrl", ['$scope', '$http', function($scope, $http) {
     .then(function successCallback(response) {
         console.log('success');
         console.log(response);
-        $scope.cards = response.data;
+        $scope.userCards = response.data;
     }
     , function errorCallback(response) {
         console.log('error');
         console.log(response);
 
     });
+
+    $scope.cardUpdate = function() {
+        $http({
+            method: 'PUT',
+            url: '/cards/create/',
+            data: {
+                books: $scope.books
+            }
+        })
+        .then(function successCallback(response) {
+            console.log($scope.books);
+            }
+        , function errorCallback(response) {
+            console.log('error');
+
+        });
+    }
 }]);
 

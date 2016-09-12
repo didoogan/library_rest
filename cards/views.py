@@ -44,13 +44,13 @@ class CardUpdateView(generics.UpdateAPIView, generics.ListAPIView):
     def get_queryset(self):
         user = self.request.user
         myuser = user.myuser
-        cards = Card.objects.filter(myuser=myuser, when_return=False)
+        cards = Card.objects.filter(myuser=myuser, when_return__isnull=True)
         return cards
 
     def perform_update(self, serializer):
         books = self.request.data.get('books', False)
         if books:
-            now = datetime.datetime.now()
+            now = datetime.datetime.now().date()
             user = self.request.user
             myuser = user.myuser
             for index in books:
