@@ -89,3 +89,5 @@ ENV/
 .ropeproject
 
 .idea
+Будет удалено media/
+Будет удалено static/css/
