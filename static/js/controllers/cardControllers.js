@@ -46,6 +46,22 @@ app.controller("IsNotTakenBooksCtrl", ['$scope', '$http', function($scope, $http
 
             });
     }
+        $scope.createCardWithBook = function() {
+            $http({
+                method: 'POST',
+                url: '/cards/create/',
+                data: {
+                    books: $scope.books
+                }
+            })
+            .then(function successCallback(response) {
+                console.log($scope.books);
+                }
+            , function errorCallback(response) {
+                console.log('error');
+
+            });
+    }
 }]);
 
 app.controller("CardUpdateCtrl", ['$scope', '$http', function($scope, $http) {

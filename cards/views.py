@@ -55,13 +55,6 @@ class CardUpdateView(APIView):
             now = datetime.datetime.now().date()
             user = self.request.user
             myuser = user.myuser
-            # for index in books:
-            #     book = Book.objects.get(id=index)
-            #     book.is_taken = False
-            #     book.save()
-            #     card = Card.objects.get(books=book, myuser=myuser, when_return__isnull=True)
-            #     card.when_return = now
-            #     card.save()
             Book.objects.filter(pk__in=books).update(is_taken=False)
             Card.objects.filter(books__pk__in=books, myuser=myuser, when_return__isnull=True).update(when_return=now)
             return Response(status=status.HTTP_200_OK)

@@ -21,8 +21,8 @@ app.controller("BookCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$
         $scope.bookSave = function() {
             console.log($scope.newBook);
             $scope.newBook.$save()
-            .then(function(res)  {  $window.location.href = '#booksapp'; })
-            .catch(function(req) { $window.location.href = '#booksapp/create';  })
+            // .then(function(res)  {  $window.location.href = '#booksapp'; })
+            .catch(function(req) { $window.location.href = '#booksapp/create';  });
             // console.log($scope.bookAuthors);
         };
         $scope.bookDelete = function(id) {

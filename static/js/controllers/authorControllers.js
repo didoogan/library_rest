@@ -25,7 +25,12 @@ app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', func
     });
 }]);
 
-app.controller("AuthorCreateCtrl", [ '$scope', 'Author','$routeParams','$window', function ($scope, Author, $routeParams, $window) {
+app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$window', function ($scope, Author, Book, $routeParams, $window) {
+    $scope.needBook = false;
+    $scope.trigger = function() {
+            $scope.needBook = !$scope.needBook;
+            console.log($scope.needBook);
+        };
     $scope.saveAuthor = function() {
         var newAuthor = new Author();
         newAuthor.first_name = $scope.firstName;
@@ -34,6 +39,21 @@ app.controller("AuthorCreateCtrl", [ '$scope', 'Author','$routeParams','$window'
         .then(function(res)  {  $window.location.href = '#authorsapp'; })
         .catch(function(req) { $window.location.href = '#authorsapp/create';  })
     };
+    $scope.saveAuthorWithBook = function() {
+            var newAuthor = new Author();
+            newAuthor.first_name = $scope.firstName;
+            newAuthor.last_name = $scope.lastName;
+            newAuthor.needBook = true;
+            newAuthor.bookTitle = $scope.title;
+            newAuthor.$save()
+            .then(function(res)  {  $window.location.href = '#authorsapp'; })
+            .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+            // $scope.saveAuthor();
+            // var newBook = new Book();
+            // newAuthor.bookTitle = $scope.title;
+            // newAuthor.needBook = true;
+            // newBook.$save();
+        };
 
 }]);
 
