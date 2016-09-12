@@ -1,0 +1,16 @@
+<h2>Return books :</h2>
+
+<div class="form-group">
+    <label for="books">Lybrary's book</label>
+    <select ng-model="books" multiple class="form-control">
+        <option ng-repeat="book in isNotTakenbooks" ng-value="book.pk">{{ book.title }}</option>
+    </select>
+</div>
+
+<a href="" ng-click="updateCard()" class="btn btn-success">Return books</a>
+
+
+
+
+
+

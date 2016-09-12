@@ -27,3 +27,17 @@ class IsNotTakenBooks(generics.ListAPIView):
     permission_classes = (IsAuthenticated, )
 
 
+class BooksTakenByCurrentUser(generics.ListAPIView):
+    serializer_class = BookSerializer
+    # queryset = Book.objects.filter(is_taken=False)
+    permission_classes = (IsAuthenticated, )
+
+    def get_queryset(self):
+        user = self.request.user
+        myuser = user.myuser
+        Book.objects.filter(is_taken=True, card__when_retutn__isnull=True)
+
+
+
+
+
