@@ -66,8 +66,8 @@ app.controller("CardUpdateCtrl", ['$scope', '$http', function($scope, $http) {
 
     $scope.cardUpdate = function() {
         $http({
-            method: 'PUT',
-            url: '/cards/create/',
+            method: 'POST',
+            url: '/cards/update/',
             data: {
                 books: $scope.books
             }
