@@ -5,10 +5,13 @@ from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
-
+from rest_framework.permissions import IsAuthenticated
 
 from users.serializer import UserSerializer
+from users.serializer import MyUserSerializer
+from cards.serializer import CardSerializer
 from users.models import MyUser
+from cards.models import Card
 
 
 class UserListView(generics.ListCreateAPIView):
@@ -53,3 +56,29 @@ def signin(request):
             'error': 'Your login and/or password are incorrect'
         }
     return Response(content)
+
+
+class UsersProfileCardsListView(generics.ListAPIView):
+    serializer_class = CardSerializer
+    permission_classes = (IsAuthenticated, )
+
+    def get_queryset(self):
+        myuser = self.request.user.myuser
+        cards = Card.objects.filter(myuser=myuser)
+        return cards
+
+
+class ProfileChangeUser(generics.UpdateAPIView):
+    serializer_class = MyUserSerializer
+    permission_classes = (IsAuthenticated, )
+    # queryset = MyUser.objects.all()
+
+    # instead field queryset
+    def get_object(self):
+        return self.request.user.myuser
+
+    # def perform_update(self, serializer):
+    #     image = self.request.data.get('file')
+    #     serializer.save(image=image)
+
+

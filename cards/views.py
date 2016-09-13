@@ -46,7 +46,7 @@ class CardUpdateView(APIView):
         user = self.request.user
         myuser = user.myuser
         cards = Card.objects.filter(myuser=myuser, when_return__isnull=True)
-        serializer = self.serializer_class(cards, context={'request': request},many=True)
+        serializer = self.serializer_class(cards, context={'request': request}, many=True)
         return Response(serializer.data)
 
     def post(self, request):

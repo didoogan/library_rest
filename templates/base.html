@@ -39,7 +39,7 @@
 
       <ul class="nav navbar-nav navbar-right" ng-controller="NavbarCtrl">
         <li ng-hide="username"><a href="#usersapp/signup">Signup</a></li>
-                  <li ng-show="username"><a href="#authorsapp">{{ username }}</a></li>
+                  <li ng-show="username"><a href="#usersapp/profile">{{ username }}</a></li>
 
          <li class="dropdown" id="menuLogin" ng-hide="username">
             <a class="dropdown-toggle" href="" data-toggle="dropdown" id="navLogin">Sign in</a>
@@ -88,6 +88,7 @@
     <script type="text/javascript" src="{% static 'js/controllers/bookControllers.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/controllers/userControllers.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/controllers/cardControllers.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ng-file-upload-all.min.js' %}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>
 
   </body>

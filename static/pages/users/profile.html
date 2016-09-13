@@ -1,0 +1,39 @@
+<h2 align="center">User profile :</h2>
+
+<div class="form-group">
+    <label for="firstName">First name :</label>
+    <input type="text" ng-model="firstName" class="form-control" id="firstName">
+
+    <label for="lastName">Last name :</label>
+    <input type="text" ng-model="lastName" class="form-control" id="lastName">
+    <br />
+    <h4>Upload user foto</h4>
+  <input type="file" ngf-select ng-model="image"
+          accept="image/*" ngf-max-height="1000" ngf-max-size="1MB" class="btn btn-group">
+
+  <br><br>
+  File:
+  <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+      <span class="progress" ng-show="f.progress >= 0">
+          <div style="width:{{f.progress}}%"
+               ng-bind="f.progress + '%'"></div>
+      </span>
+  </div>
+
+    <br />
+    <br /><button ng-click="updateUser()" class="btn btn-success">Change user</button>
+</div>
+
+<h3 align="center">User card :</h3>
+<table class="table">
+    <tr>
+        <th>BOOK</th>
+        <th>TAKEN</th>
+        <th>RETURN</th>
+    </tr>
+    <tr ng-repeat="card in cards">
+        <td><h4><a href="#booksapp/{{ card.books.pk }}">{{ card.books.title }}</a></h4></td>
+        <td>{{ card.when_giving }}</td>
+        <td>{{ card.when_return }}</td>
+    </tr>
+</table>

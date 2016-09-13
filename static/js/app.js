@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute', 'ngResource', 'LocalStorageModule']);
+var app = angular.module('myApp', ['ngRoute', 'ngResource', 'LocalStorageModule', 'ngFileUpload']);
 
 // ROUTES
 app.config(function($routeProvider, $resourceProvider, $httpProvider) {
@@ -52,6 +52,10 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
         templateUrl: 'static/pages/users/signup.html',
         controller: 'SignupCtrl'
         })
+    .when('/usersapp/profile', {
+        templateUrl: 'static/pages/users/profile.html',
+        controller: 'ProfileCtrl'
+        })
     .when('/cardsapp/', {
         templateUrl: 'static/pages/cards/cards.html',
         controller: 'CardListCtrl'
@@ -75,7 +79,6 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
 
 app.run(['$http', function($http) {
     // $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
-    console.log(localStorage.getItem("is.tolen"));
     if(localStorage.getItem("ls.token" ) && localStorage.getItem("ls.token" ) != 'null') {
         $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
     }
