@@ -27,10 +27,25 @@ app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', func
 
 app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$window', function ($scope, Author, Book, $routeParams, $window) {
     $scope.needBook = false;
-    $scope.trigger = function() {
-            $scope.needBook = !$scope.needBook;
-            console.log($scope.needBook);
-        };
+    $scope.counter = 0;
+    $scope.modelsNames = [];
+    var modelName;
+    var titles = [];
+    // $scope.trigger = function() {
+    //     $scope.needBook = true;
+    //     $scope.needBook = !$scope.needBook;
+    //     console.log($scope.needBook);
+    // };
+    $scope.addInput = function() {
+      if(!$scope.needBook) {
+          $scope.needBook = true;
+      }
+      $scope.counter++;
+      modelName = $scope.counter + "model";
+      $scope.modelsNames.push(modelName);
+      console.log($scope.modelsNames);
+    };
+
     $scope.saveAuthor = function() {
         var newAuthor = new Author();
         newAuthor.first_name = $scope.firstName;
@@ -39,21 +54,32 @@ app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams',
         .then(function(res)  {  $window.location.href = '#authorsapp'; })
         .catch(function(req) { $window.location.href = '#authorsapp/create';  })
     };
+    // $scope.saveAuthorWithBook = function() {
+    //         var newAuthor = new Author();
+    //         newAuthor.first_name = $scope.firstName;
+    //         newAuthor.last_name = $scope.lastName;
+    //         newAuthor.needBook = true;
+    //         newAuthor.bookTitle = $scope.title;
+    //         newAuthor.$save()
+    //         .then(function(res)  {  $window.location.href = '#authorsapp'; })
+    //         .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+    //     };
     $scope.saveAuthorWithBook = function() {
-            var newAuthor = new Author();
-            newAuthor.first_name = $scope.firstName;
-            newAuthor.last_name = $scope.lastName;
-            newAuthor.needBook = true;
-            newAuthor.bookTitle = $scope.title;
-            newAuthor.$save()
-            .then(function(res)  {  $window.location.href = '#authorsapp'; })
-            .catch(function(req) { $window.location.href = '#authorsapp/create';  })
-            // $scope.saveAuthor();
-            // var newBook = new Book();
-            // newAuthor.bookTitle = $scope.title;
-            // newAuthor.needBook = true;
-            // newBook.$save();
-        };
+        var inputs = angular.element('.grab-input');
+        for(var i=0; i < inputs.length; i++) {
+            titles.push(inputs[i].value)
+        }
+
+        var newAuthor = new Author();
+        newAuthor.first_name = $scope.firstName;
+        newAuthor.last_name = $scope.lastName;
+        newAuthor.needBook = true;
+        newAuthor.bookTitles = titles;
+        newAuthor.$save()
+        .then(function(res)  {  $window.location.href = '#authorsapp'; })
+        .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+
+     };
 
 }]);
 

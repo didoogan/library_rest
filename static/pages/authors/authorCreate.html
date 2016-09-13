@@ -12,11 +12,12 @@
 <button ng-hide="needBook" class="btn btn-success" ng-click="saveAuthor()">Create new author</button>
 </div>
 
-<a href="" ng-click="trigger()" id="textdecor-none"><span ng-hide="needBook" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-<span ng-show="needBook" class="glyphicon glyphicon-minus" aria-hidden="true"></span></a> Add book for author<br />
 
-<div ng-show="needBook">
+<div ng-repeat="model in modelsNames" id="super-id">
     <label for="title">Book title :</label>
-    <input ng-model="title" type="text" class="form-control" id="title" ng-model="newBook.title">
-    <br /><button class="btn btn-success" ng-click="saveAuthorWithBook()">Create new author</button>
+    <input  type="text" class="form-control grab-input" name="{{ model }}" placeholder="Enter title of author's book" >
 </div>
+<a href="" ng-click="addInput()" id="textdecor-none">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+</a> Add book for author<br />
+<br /><button ng-show="needBook" class="btn btn-success" ng-click="saveAuthorWithBook()">Create new author with book</button>
