@@ -17,8 +17,9 @@ class AuthorViewSet(viewsets.ModelViewSet):
         author = serializer.instance
         need_book = self.request.data.get('needBook', False)
         if need_book:
-            title = self.request.data.get('bookTitle')
-            book = Book.objects.create(title=title)
-            book.author.add(author)
+            titles = self.request.data.get('bookTitles')
+            for title in titles:
+                book = Book.objects.create(title=title)
+                book.author.add(author)
 
 
