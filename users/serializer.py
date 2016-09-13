@@ -25,8 +25,8 @@ class MyUserSerializer(serializers.ModelSerializer):
         fields = ('id', 'is_librarian', 'image', 'first_name', 'last_name')
 
     def update(self, instance, validated_data):
-        instance.user.first_name = validated_data.get('first_name', instance.user.first_name)
-        instance.user.last_name = validated_data.get('last_name', instance.user.last_name)
+        instance.user.first_name = validated_data['user']['first_name']
+        instance.user.last_name = validated_data['user']['last_name']
         instance.user.save()
         instance.image = validated_data.get('image')
         instance.save()
