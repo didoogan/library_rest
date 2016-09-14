@@ -65,7 +65,6 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
         });
     };
 }]);
-
 app.controller("ProfileCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
       'Upload', '$timeout', function ($scope, Author, $routeParams, $location, $window, $http, localStorageService, Upload, $timeout) {
     $http({

@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
 
 from users.serializer import UserSerializer
 from users.serializer import MyUserSerializer
@@ -48,6 +49,7 @@ def signin(request):
     if user:
         content = {
             'user': unicode(user.username),
+            # 'user': user,
             'token': unicode(user.auth_token),
         }
 
@@ -63,8 +65,13 @@ class UsersProfileCardsListView(generics.ListAPIView):
     permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
-        myuser = self.request.user.myuser
-        cards = Card.objects.filter(myuser=myuser)
+        user = self.request.user
+        myuser = user.myuser
+        if user.username == 'librarian':
+            user_id = self.request.query_params['user_id']
+            cards = Card.objects.filter(myuser__user__id=user_id)
+        else:
+            cards = Card.objects.filter(myuser=myuser)
         return cards
 
 
@@ -82,3 +89,8 @@ class ProfileChangeUser(generics.UpdateAPIView):
     #     serializer.save(image=image)
 
 
+class GetUserView(APIView):
+    def get(self):
+        user = self.request.user
+        serializer = UserSerializer(user)
+        return Response(serializer.data)

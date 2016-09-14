@@ -68,6 +68,10 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
     templateUrl: 'static/pages/cards/cardUpdate.html',
     controller: 'CardUpdateCtrl'
     })
+    .when('/cardsapp/librarian/:id', {
+    templateUrl: 'static/pages/users/profile.html',
+    controller: 'LibrarianCtrl'
+    });
 
 
     // .when('/cardsapp/create', {
