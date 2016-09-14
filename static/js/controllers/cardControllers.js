@@ -1,4 +1,5 @@
-app.controller("CardListCtrl", ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
+app.controller("CardListCtrl", ['$scope', '$http', '$rootScope', 'UserService', '$window', function($scope, $http, $rootScope, UserService, $window) {
+
     if ($rootScope.username === 'librarian') {
         $http({
             method: 'GET',
@@ -19,12 +20,21 @@ app.controller("CardListCtrl", ['$scope', '$http', '$rootScope', function($scope
         })
         .then(function successCallback(response) {
             $scope.cards = response.data;
+            UserService.getMyUser()
+            .then(function successCallback(response) {
+            $scope.myUser = response.data;
         }
         , function errorCallback(response) {
             console.log('error');
             console.log(response);
 
         });
+        }
+        , function errorCallback(response) {
+            console.log(response);
+        });
+
+
     }
     // $scope.userCard = function (id) {
     //     $http({

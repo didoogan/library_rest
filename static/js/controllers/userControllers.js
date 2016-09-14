@@ -30,8 +30,8 @@ app.controller("SignupCtrl", [ '$scope', 'Author','$routeParams','$location', '$
 }]);
 
 app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
-                       function ($scope, Author, $routeParams, $location, $window, $http, localStorageService) {
-    $scope.username = localStorageService.get('user');
+                      '$rootScope', function ($scope, Author, $routeParams, $location, $window, $http, localStorageService, $rootScope) {
+    $rootScope.username = localStorageService.get('user');
 
     $scope.logOut = function() {
         localStorageService.clearAll();
@@ -54,7 +54,7 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
                 return;
             }
             localStorageService.set('token', response.data.token);
-            $scope.username = response.data.user;
+            $rootScope.username = response.data.user;
             console.log(response.data.user);
             localStorageService.set('user', $scope.username);
             $window.location.reload();
@@ -66,7 +66,8 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
     };
 }]);
 app.controller("ProfileCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
-      'Upload', '$timeout', function ($scope, Author, $routeParams, $location, $window, $http, localStorageService, Upload, $timeout) {
+      'Upload', '$timeout','UserService', '$rootScope', function ($scope, Author, $routeParams, $location, $window, $http, localStorageService, Upload, $timeout, UserService, $rootScope) {
+    // $scope
     $http({
             method: 'GET',
             url: '/users/profile/',
@@ -80,6 +81,19 @@ app.controller("ProfileCtrl", [ '$scope', 'Author','$routeParams','$location', '
         }
         , function errorCallback(response) {
             console.log('error');
+
+        });
+
+        UserService.getMyUser()
+        .then(function successCallback(response) {
+            $scope.myUser = response.data;
+            $scope.firstName = $scope.myUser.first_name;
+            $scope.lastName = $scope.myUser.last_name;
+            console.log($scope.myUser);
+        }
+        , function errorCallback(response) {
+            console.log('error');
+            console.log(response);
 
         });
 

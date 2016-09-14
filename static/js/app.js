@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute', 'ngResource', 'LocalStorageModule', 'ngFileUpload']);
+var app = angular.module('myApp', ['ngRoute', 'ngResource', 'LocalStorageModule', 'ngFileUpload', 'ngFlash']);
 
 // ROUTES
 app.config(function($routeProvider, $resourceProvider, $httpProvider) {

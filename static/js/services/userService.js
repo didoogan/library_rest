@@ -1,6 +1,6 @@
-app.factory('User', ['$http', function($http) {
+app.factory('UserService', ['$http', function($http) {
     return {
-        getUser : function () {
+        getMyUser : function () {
             return $http({
                 method: 'GET',
                 url: '/users/getuser/'
