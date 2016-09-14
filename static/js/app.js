@@ -73,13 +73,19 @@ app.config(function($routeProvider, $resourceProvider, $httpProvider) {
     controller: 'LibrarianCtrl'
     });
 
-
-    // .when('/cardsapp/create', {
-    //     templateUrl: 'static/pages/cards/cards.html',
-    //     controller: 'CardCreateCtrl'
-    //     })
-
 });
+
+// app.config((FlashProvider) => {
+//     FlashProvider.setTimeout(5000);
+//     FlashProvider.setShowClose(true);
+//     FlashProvider.setOnDismiss(myCallback);
+// });
+//
+// app.config((FlashProvider) => {
+//     FlashProvider.setTemplate(`
+//         <div class="my-flash">{{ flash.text }}</div>
+//     `);
+// });
 
 app.run(['$http', function($http) {
     // $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
@@ -87,4 +93,5 @@ app.run(['$http', function($http) {
         $http.defaults.headers.common['Authorization'] = "Token " + localStorage.getItem("ls.token").slice(1, localStorage.getItem("ls.token").length-1);
     }
 }]);
+
 

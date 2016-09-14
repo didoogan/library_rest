@@ -84,7 +84,7 @@ app.controller("IsNotTakenBooksCtrl", ['$scope', '$http', function($scope, $http
                 console.log('error');
 
             });
-    }
+    };
         $scope.createCardWithBook = function() {
             $http({
                 method: 'POST',
@@ -144,8 +144,6 @@ app.controller("LibrarianCtrl", ['$scope', '$http', '$routeParams', function($sc
         url: '/users/profile/?user_id=' + $routeParams.id
     })
     .then(function successCallback(response) {
-        console.log('success');
-        console.log(response);
         $scope.cards = response.data;
     }
     , function errorCallback(response) {
