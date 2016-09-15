@@ -71,8 +71,8 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
 }]);
 app.controller("ProfileCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
       'Upload', '$timeout','UserService', '$rootScope', function ($scope, Author, $routeParams, $location, $window, $http, localStorageService, Upload, $timeout, UserService, $rootScope) {
-    $scope.message = localStorage.getItem("message");
-    localStorage.setItem('message', "");
+    // $scope.message = localStorage.getItem("message");
+    // localStorage.setItem('message', "");
     // $scope
     $http({
             method: 'GET',

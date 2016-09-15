@@ -1,6 +1,6 @@
 app.controller("CardListCtrl", ['$scope', '$http', '$rootScope', 'UserService', '$window', function($scope, $http, $rootScope, UserService, $window) {
-    $scope.message = localStorage.getItem("message");
-    localStorage.setItem('message', "");
+    // $scope.message = localStorage.getItem("message");
+    // localStorage.setItem('message', "");
     if ($rootScope.username === 'librarian') {
         $http({
             method: 'GET',

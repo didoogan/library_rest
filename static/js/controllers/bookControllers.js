@@ -1,6 +1,6 @@
 app.controller("BookList", [ '$scope', 'Book', '$http', '$window', 'localStorageService', 'Token', function ($scope, Book, $http, $window, localStorageService, Token) {
-    $scope.message = localStorage.getItem("message");
-    localStorage.setItem('message', "");
+    // $scope.message = localStorage.getItem("message");
+    // localStorage.setItem('message', "");
 
     Book.query(function (data) {
         $scope.books = data;
@@ -20,8 +20,8 @@ app.controller("BookDetail", [ '$scope', 'Book','$routeParams', function ($scope
 }]);
 
 app.controller("BookCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$window', function ($scope, Author, Book, $routeParams, $window) {
-        $scope.message = localStorage.getItem("message");
-        localStorage.setItem('message', "");
+        // $scope.message = localStorage.getItem("message");
+        // localStorage.setItem('message', "");
         $scope.allAuthors = Author.query();
         $scope.newBook = new Book();
         $scope.bookSave = function() {
@@ -37,8 +37,8 @@ app.controller("BookCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$
 }]);
 
 app.controller("BookUpdateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$location', '$window', function ($scope, Author, Book, $routeParams, $location, $window) {
-    $scope.message = localStorage.getItem("message");
-    localStorage.setItem('message', "");
+    // $scope.message = localStorage.getItem("message");
+    // localStorage.setItem('message', "");
     $scope.myBook = Book.getBook({ id:$routeParams.id });
     $scope.allAuthors = Author.query();
 
@@ -47,7 +47,7 @@ app.controller("BookUpdateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$
         // .then(function(res)  { localStorage.setItem('message', "Book successfully changed."); $window.location.href = '#authorsapp'; })
         // .catch(function(req) { localStorage.setItem('message', "You should to fill out all fields."); $window.location.href = '#authorsapp/create';  })
         // $location.path('booksapp');
-        localStorage.setItem('message', "Book successfully updated.");
+        localStorage.setItem('message', "Book successfully changed.");
         $window.location.href = '#booksapp';
         };
     }]);

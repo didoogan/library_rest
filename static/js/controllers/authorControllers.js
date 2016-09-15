@@ -1,6 +1,6 @@
 app.controller("AuthorList", [ '$scope', 'Author', '$http', '$window', function ($scope, Author, $http, $window) {
-    $scope.message = localStorage.getItem("message");
-    localStorage.setItem('message', "");
+    // $scope.message = localStorage.getItem("message");
+    // localStorage.setItem('message', "");
     Author.query(function (data) {
         $scope.authors = data;
 
@@ -29,8 +29,8 @@ app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', func
 }]);
 
 app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$window', function ($scope, Author, Book, $routeParams, $window) {
-    $scope.message = localStorage.getItem("message");
-    localStorage.setItem('message', "");
+    // $scope.message = localStorage.getItem("message");
+    // localStorage.setItem('message', "");
 
     $scope.needBook = false;
     $scope.counter = 0;
@@ -90,8 +90,8 @@ app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams',
 }]);
 
 app.controller("AuthorUpdateCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', function ($scope, Author, $routeParams, $location, $window) {
-    $scope.message = localStorage.getItem("message");
-    localStorage.setItem('message', "");
+    // $scope.message = localStorage.getItem("message");
+    // localStorage.setItem('message', "");
 
     $scope.author = Author.getAuthor({ id:$routeParams.id });
 

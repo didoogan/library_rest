@@ -98,7 +98,16 @@ app.directive('message', function () {
     return {
         restrict: "AE",
         replace: 'true',
-        template: '<span class="alert alert-warning col-sm-12"> {{ message }} <span/>'
+        // template: '<span class="alert alert-warning col-sm-12"> {{ message }} <span/>',
+        link: function(scope, elem, attrs) {
+            var message = localStorage.getItem("message");
+            localStorage.setItem('message', "");
+            elem.text(message);
+            if(message != '') {
+                elem.addClass('alert alert-warning col-sm-12');
+            }
+
+        }
     };
 });
 
