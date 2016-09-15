@@ -94,4 +94,12 @@ app.run(['$http', function($http) {
     }
 }]);
 
+app.directive('message', function () {
+    return {
+        restrict: "AE",
+        replace: 'true',
+        template: '<span class="alert alert-warning col-sm-12"> {{ message }} <span/>'
+    };
+});
+
 

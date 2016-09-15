@@ -37,6 +37,8 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
         localStorageService.clearAll();
         $window.location.reload();
         $scope.username = false;
+        localStorage.setItem('message', "You successfully logged out.");
+        $window.location.href = '#booksapp';
     };
 
     $scope.signIn = function() {
@@ -58,6 +60,8 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
             console.log(response.data.user);
             localStorageService.set('user', $scope.username);
             $window.location.reload();
+            localStorage.setItem('message', "You successfully logged in.");
+            $window.location.href = '#cardsapp';
         }
         , function errorCallback(response) {
             console.log('error');
@@ -67,6 +71,8 @@ app.controller("NavbarCtrl", [ '$scope', 'Author','$routeParams','$location', '$
 }]);
 app.controller("ProfileCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', '$http', 'localStorageService',
       'Upload', '$timeout','UserService', '$rootScope', function ($scope, Author, $routeParams, $location, $window, $http, localStorageService, Upload, $timeout, UserService, $rootScope) {
+    $scope.message = localStorage.getItem("message");
+    localStorage.setItem('message', "");
     // $scope
     $http({
             method: 'GET',
@@ -109,7 +115,9 @@ app.controller("ProfileCtrl", [ '$scope', 'Author','$routeParams','$location', '
                     first_name: firstName,
                     last_name: lastName
                 }
-            });
+            })
+        .then(function(res)  { localStorage.setItem('message', "User successfully changed."); $window.location.href = '#cardsapp'; })
+        .catch(function(req) { localStorage.setItem('message', "You should to fill out all fields"); $window.location.href = '#authorsapp/create';  })
         }
 
 

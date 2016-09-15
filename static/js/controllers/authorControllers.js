@@ -1,12 +1,15 @@
 app.controller("AuthorList", [ '$scope', 'Author', '$http', '$window', function ($scope, Author, $http, $window) {
+    $scope.message = localStorage.getItem("message");
+    localStorage.setItem('message', "");
     Author.query(function (data) {
         $scope.authors = data;
 
 
     });
     $scope.deleteAuthor = function(id) {
-            $http.delete('/authors/'+id);
-             $window.location.reload();
+            $http.delete('/authors/'+id)
+            .then(function(res)  { localStorage.setItem('message', "Author successfully deleted."); $window.location.href = '#authorsapp/'; })
+            .catch(function(req) { localStorage.setItem('message', "Something really wrong."); $window.location.href = '#authorsapp/create';  });
         }
 }]);
 
@@ -26,6 +29,9 @@ app.controller("AuthorDetail", [ '$scope', 'Author','$routeParams', 'Book', func
 }]);
 
 app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams','$window', function ($scope, Author, Book, $routeParams, $window) {
+    $scope.message = localStorage.getItem("message");
+    localStorage.setItem('message', "");
+
     $scope.needBook = false;
     $scope.counter = 0;
     $scope.modelsNames = [];
@@ -51,8 +57,8 @@ app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams',
         newAuthor.first_name = $scope.firstName;
         newAuthor.last_name = $scope.lastName;
         newAuthor.$save()
-        .then(function(res)  {  $window.location.href = '#authorsapp'; })
-        .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+        .then(function(res)  { localStorage.setItem('message', "Author successfully created."); $window.location.href = '#authorsapp'; })
+        .catch(function(req) { localStorage.setItem('message', "You should to fill out all fields"); $window.location.href = '#authorsapp/create';  })
     };
     // $scope.saveAuthorWithBook = function() {
     //         var newAuthor = new Author();
@@ -76,23 +82,25 @@ app.controller("AuthorCreateCtrl", [ '$scope', 'Author', 'Book', '$routeParams',
         newAuthor.needBook = true;
         newAuthor.bookTitles = titles;
         newAuthor.$save()
-        .then(function(res)  {  $window.location.href = '#authorsapp'; })
-        .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+        .then(function(res)  { localStorage.setItem('message', "Author successfully created."); $window.location.href = '#authorsapp'; })
+        .catch(function(req) { localStorage.setItem('message', "You should to fill out all fields"); $window.location.href = '#authorsapp/create';  })
 
      };
 
 }]);
 
 app.controller("AuthorUpdateCtrl", [ '$scope', 'Author','$routeParams','$location', '$window', function ($scope, Author, $routeParams, $location, $window) {
+    $scope.message = localStorage.getItem("message");
+    localStorage.setItem('message', "");
+
     $scope.author = Author.getAuthor({ id:$routeParams.id });
 
     $scope.authorUpdate = function() {
-        Author.update({ id:$scope.author.pk }, $scope.author);
-        // $scope.author.$update()
-        // .then(function(res)  {  $window.location.href = '#authorsapp'; })
-        // .catch(function(req) { $window.location.href = '#authorsapp/create';  })
+        Author.update({ id:$scope.author.pk }, $scope.author)
+        // .then(function(res)  { localStorage.setItem('message', "Author successfully created."); $window.location.href = '#authorsapp'; })
+        // .catch(function(req) { localStorage.setItem('message', "You should to fill out all fields"); $window.location.href = '#authorsapp/create';  })
+        localStorage.setItem('message', "Author successfully changed.");
         $location.path('authorsapp');
-        $window.location.reload();
         };
     }]);
 
